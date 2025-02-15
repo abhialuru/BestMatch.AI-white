@@ -1,5 +1,4 @@
 "use client";
-
 import { X } from "lucide-react";
 import Image from "next/image";
 import { useRef, useState } from "react";
@@ -26,7 +25,7 @@ function FormAnalysis() {
   return (
     <form>
       <select
-        className="px-5 py-2 max-w-fit bg-black border border-gray-300 rounded-md mb-3"
+        className="max-w-fit py-2 px-5 bg-black border border-gray-300 rounded-lg mb-5"
         name=""
         id=""
       >
@@ -38,15 +37,16 @@ function FormAnalysis() {
 
       <div className="flex flex-col relative gap-5 justify-center items-center text-center">
         <input
-          ref={inputRef}
           id="file-input"
+          ref={inputRef}
           name="price"
           type="file"
           accept="image/*"
+          className="absolute z-50 pointer-events-none invisible"
           onChange={handleImagePreview}
         />
         <button
-          className="bg-[#FF6600] hover:bg-[#FF4500] w-28 py-2 px-5 rounded-lg mt-3"
+          className="bg-[#FF6600] hover:bg-[#FF4500] w-28 py-2 px-5 rounded-lg"
           onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
             e.preventDefault();
             inputRef.current?.click();

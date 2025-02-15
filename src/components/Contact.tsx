@@ -21,7 +21,7 @@ function Contact() {
       ref={containerRef}
       className="w-full h-screen bg-black rounded-3xl"
     >
-      <div className="flex flex-col justify-center text-center items-center gap-5 pt-20">
+      <div className="flex flex-col justify-center text-center items-center gap-5 pt-16 mb-3">
         <h1 className="text-5xl tracking-tighter text-center">Contact</h1>
         <p className="text-2xl text-[#9CA3AF]">
           Have questions or feedback? Reach out to us!

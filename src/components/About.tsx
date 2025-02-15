@@ -26,7 +26,7 @@ function CardComp({ head, para, Icon }: CardCompTypes) {
 }
 
 function About({ scrollYProgess }: AboutPropsType) {
-  const scale = useTransform(scrollYProgess, [0, 1], [0.8, 1]);
+  const scale = useTransform(scrollYProgess, [0, 1], [0.9, 1]);
   const rotate = useTransform(scrollYProgess, [0, 1], [-10, 0]);
 
   return (
@@ -43,7 +43,7 @@ function About({ scrollYProgess }: AboutPropsType) {
       >
         <div className="flex flex-col gap-5">
           <h1 className="text-5xl tracking-tighter text-center">About</h1>
-          <p className="text-2xl text-[#9CA3AF] text-center tracking-tighter">
+          <p className="text-2xl text-[#9CA3AF] text-center tracking-wide">
             Discover how our AI-driven platform provides personalized product
             recommendations
           </p>

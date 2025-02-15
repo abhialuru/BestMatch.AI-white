@@ -1,7 +1,6 @@
 "use client";
 import About from "@/components/About";
 import Hero from "@/components/Hero";
-import Try from "@/components/Try";
 import { useScroll } from "motion/react";
 import { useRef } from "react";
 
