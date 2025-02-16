@@ -1,6 +1,6 @@
 "use client";
 import Fadeout from "@/app/animations/Fadeout";
-import { motion, MotionValue } from "motion/react";
+import { motion, MotionValue, useTransform } from "motion/react";
 import { ReactNode, useMemo } from "react";
 
 function Words({ children }: { children: ReactNode }) {
@@ -38,7 +38,7 @@ function Words({ children }: { children: ReactNode }) {
 
 function Hero() {
   return (
-    <motion.main className="w-full h-screen flex justify-center items-center">
+    <motion.main className="w-full h-screen flex justify-center items-center bg-[#1f1f1f]">
       <div className="max-w-xl tracking-tighter flex flex-col gap-5 mt-32">
         <Words>REVOLUTIONIZE YOUR SHOPPING EXPERIENCE</Words>
         <Fadeout className="text-[#9CA3AF] text-xl">

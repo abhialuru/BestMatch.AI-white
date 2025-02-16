@@ -10,7 +10,7 @@ interface CardCompTypes {
 }
 
 interface AboutPropsType {
-  scrollYProgess: MotionValue<number>;
+  scrollYProgress: MotionValue<number>;
 }
 
 function CardComp({ head, para, Icon }: CardCompTypes) {
@@ -25,9 +25,9 @@ function CardComp({ head, para, Icon }: CardCompTypes) {
   );
 }
 
-function About({ scrollYProgess }: AboutPropsType) {
-  const scale = useTransform(scrollYProgess, [0, 1], [0.9, 1]);
-  const rotate = useTransform(scrollYProgess, [0, 1], [-10, 0]);
+function About({ scrollYProgress }: AboutPropsType) {
+  const scale = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [10, 0]);
 
   return (
     <motion.section
@@ -35,7 +35,7 @@ function About({ scrollYProgess }: AboutPropsType) {
         scale,
         rotate,
       }}
-      className="w-full h-screen flex flex-col items-center justify-center bg-black"
+      className="w-full h-screen relative overflow-hidden flex flex-col items-center justify-center bg-black"
     >
       <div
         id="box-card"

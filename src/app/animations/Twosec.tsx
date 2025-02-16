@@ -15,7 +15,7 @@ function TwoSec() {
   return (
     <div ref={containerRef} className="w-full h-[200vh] relative bg-[#1f1f1f]">
       <Hero />
-      <About scrollYProgess={scrollYProgress} />
+      <About scrollYProgress={scrollYProgress} />
     </div>
   );
 }

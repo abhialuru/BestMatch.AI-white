@@ -2,16 +2,21 @@ import Try from "@/components/Try";
 import TwoSec from "./animations/Twosec";
 import Contact from "@/components/Contact";
 import Faq from "@/components/Faq";
+import Footer from "@/components/Footer";
 
 function page() {
   return (
-    <main className="w-full h-full overflow-hidden">
+    <main className="w-full h-full">
       <TwoSec />
       <Try />
-      <div className="w-full h-screen relative bg-[#1F1F1F]">
+
+      <div className="w-full h-screen bg-[#1f1f1f]">
         <Contact />
       </div>
-      <Faq />
+      <div className="w-full h-screen relative top-0 z-50 bg-[#1F1F1F]">
+        <Faq />
+        <Footer />
+      </div>
     </main>
   );
 }

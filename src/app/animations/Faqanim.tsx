@@ -1,13 +1,14 @@
 "use client";
-import { ChevronDown, ChevronsUpDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion } from "motion/react";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 
-// interface Faqanim{
-//     children: ReactNode
-// }
+interface FaqanimPropType {
+  question: string;
+  ans: string;
+}
 
-function Faqanim() {
+function Faqanim({ question, ans }: FaqanimPropType) {
   const [isActive, setIsActive] = useState(false);
 
   const varients = {
@@ -30,16 +31,13 @@ function Faqanim() {
         className="w-full overflow-hidden p-5 border border-white rounded-lg"
       >
         <div className=" flex justify-between mb-2">
-          <h3 className="text-xl font-semibold">How does BestMatch.AI work?</h3>
+          <h3 className="text-xl font-semibold">{question}</h3>
           <Icon
-            className="cursor-pointer"
+            className="cursor-pointer w-16 h-8"
             onClick={() => setIsActive(!isActive)}
           />
         </div>
-        <p>
-          BestMatch.AI uses advanced AI to analyze your facial features and
-          provide tailored product recommendations.
-        </p>
+        <p className="text-[#9CA3AF]">{ans}</p>
       </motion.div>
     </div>
   );

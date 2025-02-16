@@ -3,8 +3,8 @@ import FadeoutH from "@/app/animations/FadeoutH";
 
 function Navbar() {
   return (
-    <nav className="w-full h-16 fixed z-50 top-10 bg-transparent">
-      <div className="w-[85%] mx-auto h-full bg-[#1F1F1F] backdrop-blur top-10 flex items-center justify-center rounded-full">
+    <nav className="w-full h-16 fixed z-10 top-10 bg-transparent">
+      <div className="w-[85%] mx-auto h-full bg-[#1F1F1F]/15 backdrop-blur-lg top-10 flex items-center justify-center rounded-full">
         <div className="w-full h-full flex justify-between items-center px-8 py-2">
           <FadeoutH className="text-2xl font-sans font-semibold">
             Bestmatch.AI
