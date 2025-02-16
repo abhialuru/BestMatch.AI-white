@@ -31,13 +31,13 @@ function Faqanim({ question, ans }: FaqanimPropType) {
         className="w-full overflow-hidden p-5 border border-white rounded-lg"
       >
         <div className=" flex justify-between mb-2">
-          <h3 className="text-xl font-semibold">{question}</h3>
+          <h3 className="text-lg lg:text-xl font-semibold">{question}</h3>
           <Icon
-            className="cursor-pointer w-16 h-8"
+            className="cursor-pointer"
             onClick={() => setIsActive(!isActive)}
           />
         </div>
-        <p className="text-[#9CA3AF]">{ans}</p>
+        <p className="text-[#9CA3AF] text-sm md:text-base">{ans}</p>
       </motion.div>
     </div>
   );

@@ -2,10 +2,10 @@ import Faqanim from "@/app/animations/Faqanim";
 
 function Faq() {
   return (
-    <section className="w-full h-[74%] py-10 md:p-10">
+    <section className="w-full h-[74%] py-5  md:p-10">
       <div className="w-full flex flex-col lg:grid grid-cols-2 mt-20 gap-5">
         <div className="w-full flex flex-col gap-5 px-10">
-          <h1 className="text-5xl">Frequently asked questions</h1>
+          <h1 className="text-3xl lg:text-5xl">Frequently asked questions</h1>
           <p className="text-[#9CA3AF]">
             Got questions? We've got answers! In this section, we address the
             most common inquiries about BestMatch.AI
