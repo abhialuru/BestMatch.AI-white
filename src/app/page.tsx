@@ -12,10 +12,7 @@ function page() {
       <div className="w-full lg:h-screen bg-[#1f1f1f]">
         <Contact />
       </div>
-      <div className="w-full h-screen relative top-0 z-50 bg-[#1F1F1F]">
-        <Faq />
-        <Footer />
-      </div>
+      <Faq />
     </main>
   );
 }

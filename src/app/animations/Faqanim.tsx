@@ -13,7 +13,7 @@ function Faqanim({ question, ans }: FaqanimPropType) {
 
   const varients = {
     open: {
-      height: 120,
+      height: 135,
     },
     closed: {
       height: 60,
