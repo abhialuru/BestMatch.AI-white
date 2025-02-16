@@ -11,7 +11,7 @@ function FormContact() {
   if (!isMounted) return null;
 
   return (
-    <div className="w-[60%] mx-auto">
+    <div className="w-full lg:w-[60%] mx-auto">
       <form className="w-full mx-auto">
         <div className="flex flex-col md:flex-row md:space-x-2">
           <div className="w-full md:w-1/2 pb-2">

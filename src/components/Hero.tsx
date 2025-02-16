@@ -14,7 +14,7 @@ function Words({ children }: { children: ReactNode }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="text-5xl"
+      className="text-4xl md:text-5xl"
     >
       {letters.map((letter, i) => (
         <motion.span
@@ -39,7 +39,7 @@ function Words({ children }: { children: ReactNode }) {
 function Hero() {
   return (
     <motion.main className="w-full h-screen flex justify-center items-center bg-[#1f1f1f]">
-      <div className="max-w-xl tracking-tighter flex flex-col gap-5 mt-32">
+      <div className="w-full lg:max-w-2xl tracking-tighter flex flex-col gap-5 mt-32 p-5 text-center lg:text-start">
         <Words>REVOLUTIONIZE YOUR SHOPPING EXPERIENCE</Words>
         <Fadeout className="text-[#9CA3AF] text-xl">
           AI-powered personalized product recommendations tailored to your

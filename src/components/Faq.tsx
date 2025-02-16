@@ -2,8 +2,8 @@ import Faqanim from "@/app/animations/Faqanim";
 
 function Faq() {
   return (
-    <section className="w-full h-[72%] p-10 sticky top-0">
-      <div className="w-full grid grid-cols-2 mt-20">
+    <section className="w-full h-[74%] py-10 md:p-10">
+      <div className="w-full flex flex-col lg:grid grid-cols-2 mt-20 gap-5">
         <div className="w-full flex flex-col gap-5 px-10">
           <h1 className="text-5xl">Frequently asked questions</h1>
           <p className="text-[#9CA3AF]">

@@ -1,21 +1,21 @@
 function Footer() {
   return (
-    <footer className="w-full p-5 px-20 border-t border-gray-600">
-      <div className="flex w-[80%] justify-between">
-        <div className="flex flex-col justify-between gap-1">
+    <footer className="w-full h-[25%] p-5 lg:px-20 border-t border-gray-600 flex flex-col justify-between">
+      <div className="flex flex-col lg:flex-row w-full lg:w-[80%] justify-between">
+        <div className="flex flex-col justify-between">
           <div>
             <h1 className="text-2xl font-semibold">BestMatch.AI</h1>
             <p className="text-[#9CA3AF]">
               Revolutionize your shopping experience
             </p>
           </div>
-          <p className="text-[#9CA3AF]">
+          <p className="text-[#9CA3AF] hidden lg:block">
             &copy; BestMatch.AI 2025. All rights reserved
           </p>
         </div>
         <div>
           <h3 className="font-bold text-xl">Company</h3>
-          <ul className="text-[#9CA3AF]">
+          <ul className="text-[#9CA3AF] flex lg:block gap-5">
             <li>Home</li>
             <li>About</li>
             <li>Contact</li>
@@ -23,6 +23,9 @@ function Footer() {
           </ul>
         </div>
       </div>
+      <p className="text-[#9CA3AF] text-sm mt-16 block lg:hidden">
+        &copy; BestMatch.AI 2025. All rights reserved
+      </p>
     </footer>
   );
 }

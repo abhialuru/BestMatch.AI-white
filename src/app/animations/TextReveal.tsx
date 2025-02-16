@@ -15,7 +15,7 @@ function TextReveal({ children }: { children: ReactNode }) {
       }}
       transition={{
         ease: "easeInOut",
-        duration: 2,
+        duration: 0.5,
       }}
       viewport={{ once: true }}
     >

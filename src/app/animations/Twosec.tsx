@@ -13,7 +13,10 @@ function TwoSec() {
   });
 
   return (
-    <div ref={containerRef} className="w-full h-[200vh] relative bg-[#1f1f1f]">
+    <div
+      ref={containerRef}
+      className="w-full min-h-[200vh] relative bg-[#1f1f1f]"
+    >
       <Hero />
       <About scrollYProgress={scrollYProgress} />
     </div>

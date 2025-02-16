@@ -1,4 +1,5 @@
 "use client";
+import TextReveal from "@/app/animations/TextReveal";
 import { X } from "lucide-react";
 import Image from "next/image";
 import { useRef, useState } from "react";
@@ -24,17 +25,18 @@ function FormAnalysis() {
 
   return (
     <form>
-      <select
-        className="max-w-fit py-2 px-5 bg-black border border-gray-300 rounded-lg mb-5"
-        name=""
-        id=""
-      >
-        <option>choose your price</option>
-        <option value="50">0-100$</option>
-        <option value="140">100-200$</option>
-        <option value="270">200-300$</option>
-      </select>
-
+      <TextReveal>
+        <select
+          className="max-w-fit py-2 px-5 bg-black border border-gray-300 rounded-lg mb-5"
+          name=""
+          id=""
+        >
+          <option>choose your price</option>
+          <option value="50">0-100$</option>
+          <option value="140">100-200$</option>
+          <option value="270">200-300$</option>
+        </select>
+      </TextReveal>
       <div className="flex flex-col relative gap-5 justify-center items-center text-center">
         <input
           id="file-input"
@@ -45,15 +47,17 @@ function FormAnalysis() {
           className="absolute z-50 pointer-events-none invisible"
           onChange={handleImagePreview}
         />
-        <button
-          className="bg-[#FF6600] hover:bg-[#FF4500] w-28 py-2 px-5 rounded-lg"
-          onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-            e.preventDefault();
-            inputRef.current?.click();
-          }}
-        >
-          Upload
-        </button>
+        <TextReveal>
+          <button
+            className="bg-[#FF6600] hover:bg-[#FF4500] w-28 py-2 px-5 rounded-lg"
+            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+              e.preventDefault();
+              inputRef.current?.click();
+            }}
+          >
+            Upload
+          </button>
+        </TextReveal>
         {imagePrev && (
           <>
             <div className="w-28 h-40 relative">
@@ -71,9 +75,11 @@ function FormAnalysis() {
             </div>
           </>
         )}
-        <button className="bg-[#FF6600] w-28 py-2 px-5 rounded-lg hover:bg-[#FF4500]">
-          Analyze
-        </button>
+        <TextReveal>
+          <button className="bg-[#FF6600] w-28 py-2 px-5 rounded-lg hover:bg-[#FF4500]">
+            Analyze
+          </button>
+        </TextReveal>
       </div>
     </form>
   );
