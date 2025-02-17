@@ -58,7 +58,7 @@ function About({ scrollYProgress }: AboutPropsType) {
                 delay: 0.3,
               }}
               viewport={{ once: true }}
-              className="flex flex-col w-full lg:w-[30%] lg:h-60 justify-center items-center bg-[#1F1F1F] transition-transform duration-300 p-3 rounded-lg"
+              className="flex flex-col w-full lg:w-[30%] h-60 justify-center items-center bg-[#1F1F1F] transition-transform duration-300 p-3 rounded-lg"
             >
               <CardComp
                 head="AI-Powered"
@@ -77,7 +77,7 @@ function About({ scrollYProgress }: AboutPropsType) {
                 delay: 0.3,
               }}
               viewport={{ once: true }}
-              className="flex flex-col w-full lg:w-[30%] lg:h-60 justify-center items-center bg-[#1F1F1F] transition-transform duration-300 p-3 rounded-lg"
+              className="flex flex-col w-full lg:w-[30%] h-60 justify-center items-center bg-[#1F1F1F] transition-transform duration-300 p-3 rounded-lg"
             >
               <CardComp
                 head="Personalized"
@@ -96,7 +96,7 @@ function About({ scrollYProgress }: AboutPropsType) {
                 delay: 0.3,
               }}
               viewport={{ once: true }}
-              className="flex flex-col w-full lg:w-[30%] lg:h-60 justify-center items-center bg-[#1F1F1F] transition-transform duration-300 p-3 rounded-lg"
+              className="flex flex-col w-full lg:w-[30%] h-60 justify-center items-center bg-[#1F1F1F] transition-transform duration-300 p-3 rounded-lg"
             >
               <CardComp
                 head="Secure"

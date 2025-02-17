@@ -19,7 +19,7 @@ function Contact() {
         scale,
       }}
       ref={containerRef}
-      className="w-full lg:h-screen bg-black rounded-3xl py-10 lg:p-1 px-5"
+      className="w-full min-w-fit lg:h-screen bg-black rounded-3xl py-10 lg:p-1 px-5"
     >
       <div className="flex flex-col justify-center text-center items-center gap-5 lg:pt-16 mb-3">
         <h1 className="text-5xl tracking-tighter text-center">Contact</h1>
