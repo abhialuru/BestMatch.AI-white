@@ -18,7 +18,7 @@ function Navbar() {
 
   return (
     <nav className="w-full  lg:block min-h-16 fixed z-10 top-10 bg-transparent">
-      <div className="w-[85%] mx-auto h-full bg-black/30 backdrop-blur-lg top-10 flex items-center justify-center rounded-3xl lg:rounded-full p-4">
+      <div className="w-[85%] mx-auto h-full bg-black/30 backdrop-blur-lg top-10 flex items-center justify-center rounded-3xl lg:rounded-full p-4 lg:p-1">
         <div className="w-full lg:h-full hidden lg:flex justify-between lg:items-center lg:px-8 py-2">
           <Fadeout className="text-xl font-bold text-gradient-r from-white via-gray-950 to-white">
             Bestmatch.AI

@@ -3,6 +3,7 @@ import TwoSec from "./animations/Twosec";
 import Contact from "@/components/Contact";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
+import Foot from "@/components/Foot";
 
 function page() {
   return (
@@ -13,6 +14,7 @@ function page() {
         <Contact />
       </div>
       <Faq />
+      <Foot />
     </main>
   );
 }

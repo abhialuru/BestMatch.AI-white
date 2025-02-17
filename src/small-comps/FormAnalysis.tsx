@@ -26,25 +26,27 @@ function FormAnalysis() {
 
   return (
     <form>
-      <motion.select
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          type: "spring",
-          delay: 0.5,
-        }}
-        className="max-w-fit py-2 px-5 bg-black border border-gray-300 rounded-lg mb-5"
-        name=""
-        id=""
-      >
-        <option>choose your price</option>
-        <option value="50">0-100$</option>
-        <option value="140">100-200$</option>
-        <option value="270">200-300$</option>
-      </motion.select>
+      <label>
+        <motion.select
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            type: "spring",
+            delay: 0.5,
+          }}
+          className="max-w-fit py-2 px-5 bg-black border border-gray-300 rounded-lg mb-5"
+          name=""
+          id=""
+        >
+          <option>choose your price</option>
+          <option value="50">0-100$</option>
+          <option value="140">100-200$</option>
+          <option value="270">200-300$</option>
+        </motion.select>
+      </label>
       <div className="flex flex-col relative gap-5 justify-center items-center text-center">
         <input
           id="file-input"

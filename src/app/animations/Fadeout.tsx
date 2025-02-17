@@ -10,7 +10,7 @@ interface FadeoutPropTypes {
 
 function Fadeout({ children, className }: FadeoutPropTypes) {
   return (
-    <motion.p
+    <motion.span
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
@@ -21,7 +21,7 @@ function Fadeout({ children, className }: FadeoutPropTypes) {
       className={className}
     >
       {children}
-    </motion.p>
+    </motion.span>
   );
 }
 

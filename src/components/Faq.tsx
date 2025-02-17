@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 function Faq() {
   return (
-    <section className="w-full min-h-screen pt-5 md:px-10 md:pt-10 flex flex-col bg-[#1F1F1F] relative top-0 z-50">
+    <section className="w-full min-h-fit pt-5 md:px-10 md:pt-10 flex flex-col bg-[#1F1F1F]">
       <div className="w-full flex flex-col lg:grid grid-cols-2 lg:mt-14 gap-5 flex-grow">
         <div className="w-full flex flex-col gap-5 px-10">
           <h1 className="text-3xl lg:text-5xl">Frequently asked questions</h1>
@@ -23,9 +23,6 @@ function Faq() {
             ans="Yes, all data processing is done on-device, and we do not store any personal data."
           />
         </div>
-      </div>
-      <div className="h-fit">
-        <Footer />
       </div>
     </section>
   );

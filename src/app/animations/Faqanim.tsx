@@ -31,7 +31,7 @@ function Faqanim({ question, ans }: FaqanimPropType) {
         className="w-full overflow-hidden p-5 border border-white rounded-lg"
       >
         <div className=" flex justify-between mb-2">
-          <h3 className="text-lg lg:text-xl font-semibold">{question}</h3>
+          <h1 className="text-lg lg:text-xl font-semibold">{question}</h1>
           <Icon
             className="cursor-pointer"
             onClick={() => setIsActive(!isActive)}
