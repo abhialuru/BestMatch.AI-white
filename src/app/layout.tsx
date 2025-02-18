@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { ReactLenis } from "@/utils/lenis";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,10 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        {children}
-      </body>
+      <ReactLenis root>
+        <body>
+          <Navbar />
+          {children}
+        </body>
+      </ReactLenis>
     </html>
   );
 }
