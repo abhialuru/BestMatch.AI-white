@@ -9,7 +9,7 @@ function page() {
     <main className="w-full h-full">
       <TwoSec />
       <Try />
-      <div className="w-full lg:h-screen bg-[#1f1f1f]">
+      <div id="contact" className="w-full lg:h-screen bg-[#1f1f1f]">
         <Contact />
       </div>
       <Faq />

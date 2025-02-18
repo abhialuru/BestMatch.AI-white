@@ -1,4 +1,5 @@
 "use client";
+import Textanim from "@/app/animations/Textanim";
 import FormContact from "@/small-comps/FormContact";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
@@ -23,10 +24,14 @@ function Contact() {
       className="w-full min-w-fit lg:h-screen bg-black rounded-3xl py-10 lg:p-1 px-5"
     >
       <div className="flex flex-col justify-center text-center items-center gap-5 lg:pt-16 mb-3">
-        <h1 className="text-5xl tracking-tighter text-center">Contact</h1>
-        <p className="text-2xl text-[#9CA3AF]">
-          Have questions or feedback? Reach out to us!
-        </p>
+        <Textanim>
+          <h1 className="text-4xl tracking-tighter text-center">Contact</h1>
+        </Textanim>
+        <Textanim>
+          <p className="text-xl text-[#9CA3AF]">
+            Have questions or feedback? Reach out to us!
+          </p>
+        </Textanim>
       </div>
       <FormContact />
     </motion.section>

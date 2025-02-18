@@ -1,7 +1,5 @@
 "use client";
-import TextReveal from "@/app/animations/TextReveal";
 import { X } from "lucide-react";
-import { motion } from "motion/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
 
@@ -27,16 +25,7 @@ function FormAnalysis() {
   return (
     <form>
       <label>
-        <motion.select
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            type: "spring",
-            delay: 0.5,
-          }}
+        <select
           className="max-w-fit py-2 px-5 bg-black border border-gray-300 rounded-lg mb-5"
           name=""
           id=""
@@ -45,7 +34,7 @@ function FormAnalysis() {
           <option value="50">0-100$</option>
           <option value="140">100-200$</option>
           <option value="270">200-300$</option>
-        </motion.select>
+        </select>
       </label>
       <div className="flex flex-col relative gap-5 justify-center items-center text-center">
         <input
@@ -57,16 +46,7 @@ function FormAnalysis() {
           className="absolute z-50 pointer-events-none invisible"
           onChange={handleImagePreview}
         />
-        <motion.button
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            type: "spring",
-            delay: 0.5,
-          }}
+        <button
           className="bg-[#FF6600] hover:bg-[#FF4500] w-28 py-2 px-5 rounded-lg"
           onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
             e.preventDefault();
@@ -74,7 +54,7 @@ function FormAnalysis() {
           }}
         >
           Upload
-        </motion.button>
+        </button>
         {imagePrev && (
           <>
             <div className="w-28 h-40 relative">
@@ -92,20 +72,9 @@ function FormAnalysis() {
             </div>
           </>
         )}
-        <motion.button
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            type: "spring",
-            delay: 0.5,
-          }}
-          className="bg-[#FF6600] w-28 py-2 px-5 rounded-lg hover:bg-[#FF4500]"
-        >
+        <button className="bg-[#FF6600] w-28 py-2 px-5 rounded-lg hover:bg-[#FF4500]">
           Analyze
-        </motion.button>
+        </button>
       </div>
     </form>
   );

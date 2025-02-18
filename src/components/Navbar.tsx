@@ -2,6 +2,7 @@
 import Fadeout from "@/app/animations/Fadeout";
 import { AlignRight } from "lucide-react";
 import { motion } from "motion/react";
+import Link from "next/link";
 import { useState } from "react";
 
 function Navbar() {
@@ -27,21 +28,31 @@ function Navbar() {
             className="size-5 lg:hidden"
             onClick={() => setIsMenu(!isMenu)}
           />
-          <div className="w-[50%] h-full  flex items-center justify-between gap-">
-            <a href="#contact">
-              <Fadeout className="w-28 text-center py-2 p-1 rounded-full hover:bg-[#FF6600]">
-                Home
-              </Fadeout>
-            </a>
-            <Fadeout className="w-28 text-center py-2 p-1 rounded-full hover:bg-[#FF6600]">
-              About
-            </Fadeout>
-            <Fadeout className="w-28 text-center py-2 p-1 rounded-full hover:bg-[#FF6600]">
-              Contact
-            </Fadeout>
-            <Fadeout className="w-28 text-center py-2 p-1 rounded-full bg-[#FF6600] hover:bg-[#FF4500]">
-              Try it
-            </Fadeout>
+          <div className="w-[50%] h-full  flex items-center justify-between gap-2">
+            <Link
+              className="w-28 text-center py-2 p-1 rounded-full hover:bg-[#FF6600]"
+              href="/"
+            >
+              <Fadeout className="w-full">Home</Fadeout>
+            </Link>
+            <Link
+              className="w-28 text-center py-2 p-1 rounded-full hover:bg-[#FF6600]"
+              href="#about"
+            >
+              <Fadeout className="w-full">About</Fadeout>
+            </Link>
+            <Link
+              className="w-28 text-center py-2 p-1 rounded-full hover:bg-[#FF6600]"
+              href="#contact"
+            >
+              <Fadeout className="w-full">Contact</Fadeout>
+            </Link>
+            <Link
+              className="w-28 text-center py-2 p-1 rounded-full bg-[#FF6600] hover:bg-[#FF4500]"
+              href="#try"
+            >
+              <Fadeout className="w-full">Try it</Fadeout>
+            </Link>
           </div>
         </div>
         <motion.div
@@ -58,10 +69,18 @@ function Navbar() {
             />
           </div>
           <ul className="mx-auto flex flex-col gap-2 mt-2 text-center pb-2 text-gray-300">
-            <li>Home</li>
-            <li>About</li>
-            <li>Try It</li>
-            <li>contact</li>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="#about">About</Link>
+            </li>
+            <li>
+              <Link href="#try">Try it</Link>
+            </li>
+            <li>
+              <Link href="#contact">Contact</Link>
+            </li>
           </ul>
         </motion.div>
       </div>

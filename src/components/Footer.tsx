@@ -1,4 +1,5 @@
 import { Instagram, Linkedin, Twitter } from "lucide-react";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -26,16 +27,16 @@ function Footer() {
               <h3 className="text-lg font-semibold text-center">Company</h3>
               <ul className="text-start rounded-full p-2 grid grid-cols-3 lg:flex flex-col gap-3 border-red-100">
                 <li className="bg-[#1F1F1F] p-2 px-5 text-center rounded-full">
-                  Home
+                  <Link href="/">Home</Link>
                 </li>
                 <li className="bg-[#1F1F1F] p-2 px-5 text-center rounded-full">
-                  About
+                  <Link href="#about">About</Link>
                 </li>
                 <li className="bg-[#1F1F1F] p-2 px-5 text-center rounded-full">
-                  Contact
+                  <Link href="#try">Try it</Link>
                 </li>
                 <li className="bg-[#1F1F1F] p-2 px-5 text-center rounded-full">
-                  Try It
+                  <Link href="#contact">Contact</Link>
                 </li>
               </ul>
             </div>

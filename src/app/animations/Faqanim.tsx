@@ -1,6 +1,6 @@
 "use client";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion"; // Ensure you're using framer-motion
 import { useState } from "react";
 
 interface FaqanimPropType {
@@ -11,12 +11,22 @@ interface FaqanimPropType {
 function Faqanim({ question, ans }: FaqanimPropType) {
   const [isActive, setIsActive] = useState(false);
 
-  const varients = {
+  const variants = {
     open: {
-      height: 135,
+      height: "auto",
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
     },
     closed: {
-      height: 60,
+      height: 0,
+      opacity: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
     },
   };
 
@@ -24,21 +34,23 @@ function Faqanim({ question, ans }: FaqanimPropType) {
 
   return (
     <div>
-      <motion.div
-        variants={varients}
-        animate={isActive ? "open" : "closed"}
-        initial="closed"
-        className="w-full overflow-hidden p-5 border border-white rounded-lg"
-      >
-        <div className=" flex justify-between mb-2">
+      <div className="w-full overflow-hidden p-5 border border-white rounded-lg">
+        <div
+          onClick={() => setIsActive(!isActive)}
+          className="flex justify-between"
+        >
           <h1 className="text-lg lg:text-xl font-semibold">{question}</h1>
-          <Icon
-            className="cursor-pointer"
-            onClick={() => setIsActive(!isActive)}
-          />
+          <Icon className="cursor-pointer" />
         </div>
-        <p className="text-[#9CA3AF] text-sm md:text-base">{ans}</p>
-      </motion.div>
+        <motion.div
+          variants={variants}
+          animate={isActive ? "open" : "closed"}
+          initial="closed"
+          className="overflow-hidden"
+        >
+          <p className="text-[#9CA3AF] md:text-base mt-2">{ans}</p>
+        </motion.div>
+      </div>
     </div>
   );
 }
