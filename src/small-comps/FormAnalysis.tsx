@@ -2,6 +2,7 @@
 import { ChevronsDownUp, LockKeyhole, LockKeyholeOpen, X } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useRef, useState } from "react";
 
 interface Product {
@@ -25,6 +26,7 @@ function FormAnalysis() {
   const [recommendations, setRecommendations] = useState<Category[] | null>(
     null
   );
+  const [loading, setLoading] = useState(false);
 
   const variants = {
     open: {
@@ -66,6 +68,7 @@ function FormAnalysis() {
 
   async function handleAnalyze(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setLoading(true);
     if (!imageFile || !price) {
       alert("Please fill in all fields");
       return;
@@ -95,6 +98,8 @@ function FormAnalysis() {
       }
     } catch (error) {
       console.error("Error submitting form:", error);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -105,7 +110,6 @@ function FormAnalysis() {
   });
 
   const handleCategoryClick = (index: number) => {
-    // Toggle the active state for the clicked category
     setActiveCategories((prevState) => ({
       ...prevState,
       [index]: !prevState[index],
@@ -167,10 +171,11 @@ function FormAnalysis() {
             </>
           )}
           <button
+            disabled={loading}
             type="submit"
-            className="bg-[#FF6600] w-28 py-2 px-5 rounded-lg hover:bg-[#FF4500]"
+            className="bg-[#FF6600] w-32 py-2 px-8 rounded-lg hover:bg-[#FF4500]"
           >
-            Analyze
+            {loading ? "Generating..." : "Analyze"}
           </button>
         </div>
       </form>
@@ -203,28 +208,30 @@ function FormAnalysis() {
                   >
                     {category.products.map((products, i) => (
                       <div
-                        className="border w-60 h-64 bg-white text-black rounded-lg flex flex-col justify-center p-5"
+                        className="border w-60 min-h-64 bg-white text-black rounded-lg flex flex-col justify-center p-5"
                         key={i}
                       >
-                        <div className="size-36 mx-auto rounded-lg overflow-hidden">
-                          <Image
-                            className="w-full h-full object-cover rounded-lg hover:scale-110"
-                            src={products.image_url!}
-                            alt="product"
-                            width={500}
-                            height={500}
-                          />
-                        </div>
-                        <div className="flex flex-col gap-3 mx-auto">
-                          <h1 className="text-lg font-semibold line-clamp-2 mt-5 text-center">
-                            {products.title}
-                          </h1>
-                          {products.price && (
-                            <p className="text-sm text-gray-600 text-center">
-                              ${products.price}
-                            </p>
-                          )}
-                        </div>
+                        <Link href={products.product_url} target="_blank">
+                          <div className="size-36 mx-auto rounded-lg overflow-hidden">
+                            <Image
+                              className="w-full h-full object-cover rounded-lg hover:scale-110"
+                              src={products.image_url!}
+                              alt="product"
+                              width={500}
+                              height={500}
+                            />
+                          </div>
+                          <div className="flex flex-col gap-3 mx-auto">
+                            <h1 className="text-lg font-semibold line-clamp-2 mt-5 text-center">
+                              {products.title}
+                            </h1>
+                            {products.price && (
+                              <p className="text-sm text-gray-600 text-center">
+                                ${products.price}
+                              </p>
+                            )}
+                          </div>
+                        </Link>
                       </div>
                     ))}
                   </motion.div>
