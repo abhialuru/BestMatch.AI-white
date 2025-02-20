@@ -15,12 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ReactLenis root>
-        <body>
-          <Navbar />
-          {children}
-        </body>
-      </ReactLenis>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

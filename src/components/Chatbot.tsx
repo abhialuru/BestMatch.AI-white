@@ -1,4 +1,5 @@
 "use client";
+import { CircleSmall } from "lucide-react";
 import React, { useState } from "react";
 
 interface Product {
@@ -36,33 +37,9 @@ function Chatbot({
 
   async function messageToAI(Message: string, sessionId: string) {
     if (!Message.trim()) {
-      // Check if the passed Message is empty
       console.log("Message is empty, not sending.");
-      return; // Early return to prevent the request
+      return;
     }
-
-    console.log("Sending message to AI:", Message);
-    console.log("Sending routine to AI:", routine);
-
-    console.log({
-      message: Message,
-      sessionId: sessionId,
-      context: {
-        routine: routine,
-        products: recommendations.map((cat) => ({
-          category: cat.category,
-          products: cat.products.map((product) => ({
-            title: product.title,
-            price: product.price,
-            rating: product.rating,
-            reviews_count: product.reviews_count,
-          })),
-        })),
-        tips: tips,
-      },
-    });
-
-    // ...rest of the code
 
     try {
       const response = await fetch(
@@ -93,8 +70,6 @@ function Chatbot({
       );
 
       const data = await response.json();
-      console.log(data);
-
       if (data.success) {
         setChatMessages((prev) => [
           ...prev,
@@ -120,56 +95,70 @@ function Chatbot({
   function handleSendMessage(e: React.FormEvent) {
     e.preventDefault();
 
-    console.log("User message before sending:", userMessage); // Debugging line
-
     if (userMessage.trim()) {
-      // Ensure the message is not empty
       setChatMessages((prev) => [
         ...prev,
         { sender: "user", message: userMessage },
       ]);
 
-      messageToAI(userMessage, analysisId); // Ensure you're passing the message here
-      setUserMessage(""); // Clear the input after sending the message
+      messageToAI(userMessage, analysisId);
+      setUserMessage("");
     } else {
       console.log("User message is empty, not sending.");
     }
   }
 
   return (
-    <div className="mt-20 w-full h-screen">
-      <div className="border size-[60%] rounded-md mx-auto flex flex-col">
-        <div className="flex flex-grow">
-          <div>
-            {chatMessages.map((msg, i) => (
-              <div
-                key={i}
-                className={`m-1 p-1 ${
-                  msg.sender === "AI" ? "text-left bg-zinc-800" : "text-right"
-                }`}
-              >
-                <strong>{msg.sender === "user" ? "You: " : "AI: "}</strong>
-                {msg.message}
-              </div>
-            ))}
-          </div>
+    <div className="w-[70vw] h-[70vh] bg-black mt-20 rounded-md flex flex-col">
+      <div className="w-full text-white/75 border-b p-2 border-zinc-700 flex justify-between">
+        <div>
+          <p className="text-sm text-start">chat with</p>
+          <p className="text-start flex gap-2 items-center">
+            <span>
+              <CircleSmall className="size-3 text-green-500 fill-current" />
+            </span>
+            AI Assistant
+          </p>
         </div>
-        <form
-          onSubmit={handleSendMessage}
-          className="w-full h-9 flex justify-between"
-        >
-          <input
-            type="text"
-            className="w-full bg-transparent border"
-            value={userMessage}
-            onChange={(e) => setUserMessage(e.target.value)}
-          />
-
-          <button type="submit" className="border p-2 ">
-            send
-          </button>
-        </form>
+        <h3 className="text-lg h-full flex items-center font-bold text-[#FF4500]">
+          BestMatch.AI
+        </h3>
       </div>
+
+      {/* Scrollable area for chat messages */}
+      <div className="flex-grow overflow-y-auto p-2 scrollable-area">
+        <div className="w-full">
+          {chatMessages.map((msg, i) => (
+            <div
+              key={i}
+              className={` h-fit m-1 p-1 ${
+                msg.sender === "AI"
+                  ? "float-left bg-zinc-900 w-[85%] rounded-md"
+                  : "float-right"
+              }`}
+            >
+              <strong>{msg.sender === "user" ? "You: " : "AI: "}</strong>
+              {msg.message}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Input area for the user to type a message */}
+      <form
+        onSubmit={handleSendMessage}
+        className="w-full h-14 flex justify-between p-2 border-t mt-3 border-zinc-700"
+      >
+        <input
+          type="text"
+          className="w-full bg-[#1f1f1f] rounded-l-md outline-none focus:outline-none p-1 text-sm text-white/75"
+          value={userMessage}
+          onChange={(e) => setUserMessage(e.target.value)}
+        />
+        <button type="submit" className="p-2 bg-[#1f1f1f] rounded-r-md">
+          send
+        </button>
+      </form>
     </div>
   );
 }

@@ -37,3 +37,13 @@ body {
   border-right: 2px solid #ff4500;
   animation: typing 1.5s steps(30) 1s forwards;
 }
+
+/* Hide the scrollbar but keep scrolling functionality */
+.scrollable-area::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollable-area {
+  -ms-overflow-style: none; /* For Internet Explorer 10+ */
+  scrollbar-width: none; /* For Firefox */
+}
