@@ -50,15 +50,17 @@ function Try() {
     (document.getElementById("file-input") as HTMLInputElement).value = "";
     setImageFile(null);
     setRecommendations(null);
+    setRoutine(null);
   }
 
   async function handleAnalyze(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setLoading(true);
     if (!imageFile || !price) {
       alert("Please fill in all fields");
       return;
     }
+
+    setLoading(true);
 
     const formData = new FormData();
     formData.append("image", imageFile);
@@ -144,7 +146,7 @@ function Try() {
         <form onSubmit={handleAnalyze}>
           <label>
             <select
-              className="max-w-fit py-2 px-5 bg-black border border-gray-300 rounded-lg mb-5"
+              className="max-w-fit py-4 border border-zinc-600 px-5 bg-black rounded-md focus:outline-none mb-5"
               name="price-range"
               value={price}
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
@@ -152,8 +154,8 @@ function Try() {
               }
             >
               <option>choose your price</option>
-              <option value="low">Low ($0-$5)</option>
-              <option value="medium">Medium ($5-$20)</option>
+              <option value="low">Low ($0 - $5)</option>
+              <option value="medium">Medium ($5 - $20)</option>
               <option value="high">High ($20++)</option>
             </select>
           </label>
@@ -168,7 +170,7 @@ function Try() {
               onChange={handleImagePreview}
             />
             <button
-              className="bg-[#FF6600] hover:bg-[#FF4500] w-28 py-2 px-5 rounded-lg"
+              className="bg-[#FF6600] hover:bg-[#FF4500] w-40 px-5 py-3 rounded-lg"
               onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                 e.preventDefault();
                 inputRef.current?.click();
@@ -196,7 +198,9 @@ function Try() {
             <button
               disabled={loading}
               type="submit"
-              className="bg-[#FF6600] w-32 py-2 px-8 rounded-lg hover:bg-[#FF4500]"
+              className={`bg-[#FF6600] w-40 px-5 py-3 rounded-lg hover:bg-[#FF4500] ${
+                loading && "pointer-events-none bg-gray-600"
+              }`}
             >
               {loading ? "Generating..." : "Analyze"}
             </button>
