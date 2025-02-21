@@ -130,10 +130,10 @@ function Chatbot({
           {chatMessages.map((msg, i) => (
             <div
               key={i}
-              className={` h-fit m-1 p-1 ${
+              className={`h-fit m-1 p-1 ${
                 msg.sender === "AI"
-                  ? "float-left bg-zinc-900 w-[85%] rounded-md"
-                  : "float-right"
+                  ? "float-left text-left bg-zinc-900 max-w-[75%] rounded-md"
+                  : "float-right text-left max-w-[75%]"
               }`}
             >
               <strong>{msg.sender === "user" ? "You: " : "AI: "}</strong>
