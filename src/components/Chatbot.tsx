@@ -33,6 +33,7 @@ function Chatbot({
     { sender: string; message: string }[]
   >([]);
   const [userMessage, setUserMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   async function messageToAI(Message: string, sessionId: string) {
     if (!Message.trim()) {
@@ -86,6 +87,8 @@ function Chatbot({
           message: "Sorry, there was an error processing your message.",
         },
       ]);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -122,7 +125,6 @@ function Chatbot({
         </h3>
       </div>
 
-      {/* Scrollable area for chat messages */}
       <div className="flex-grow overflow-y-auto p-2 scrollable-area">
         <div className="w-full">
           {chatMessages.map((msg, i) => (
@@ -130,7 +132,7 @@ function Chatbot({
               key={i}
               className={` h-fit m-1 p-1 ${
                 msg.sender === "AI"
-                  ? "float-left bg-zinc-900 max-w-[85%] rounded-md"
+                  ? "float-left bg-zinc-900 w-[85%] rounded-md"
                   : "float-right"
               }`}
             >
