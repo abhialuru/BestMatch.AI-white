@@ -20,7 +20,7 @@ function Routine({ routine }: { routine: string }) {
   }
 
   return (
-    <section className="w-full min-h-screen">
+    <section className="w-full h-fit">
       <h1 className="text-2xl font-bold text-[#FF4500] mb-3 mt-10">
         Skin-care routine Analysis
       </h1>
