@@ -79,7 +79,7 @@ function Recommend({ recommendations }: recommendProps) {
                 variants={variants}
                 animate={activeCategories[i] ? "open" : "closed"}
                 initial="closed"
-                className={`grid grid-cols-4 px-5 place-content-center gap-y-5 overflow-hidden ${
+                className={`flex flex-col items-center md:grid md:grid-cols-2 lg:grid lg:grid-cols-4 px-5 place-content-center gap-y-5 overflow-hidden ${
                   activeCategories[i] && "pt-5"
                 }`}
               >

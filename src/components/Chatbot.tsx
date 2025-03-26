@@ -109,7 +109,7 @@ function Chatbot({
   }
 
   return (
-    <div className="w-[70vw] h-[70vh] bg-black mt-20 rounded-md flex flex-col">
+    <div className="w-[95%] lg:w-[70vw] h-[70vh] bg-black mt-10 lg:mt-20 rounded-md flex flex-col">
       <div className="w-full text-white/75 border-b p-2 border-zinc-700 flex justify-between">
         <div>
           <p className="text-sm text-start">chat with</p>
@@ -132,8 +132,8 @@ function Chatbot({
               key={i}
               className={`h-fit m-1 p-1 ${
                 msg.sender === "AI"
-                  ? "float-left text-left bg-zinc-900 max-w-[75%] rounded-md"
-                  : "float-right text-left max-w-[75%]"
+                  ? "float-left text-left bg-zinc-900 w-[75%] rounded-md"
+                  : "float-right text-right w-[75%]"
               }`}
             >
               <strong>{msg.sender === "user" ? "You: " : "AI: "}</strong>
@@ -143,7 +143,6 @@ function Chatbot({
         </div>
       </div>
 
-      {/* Input area for the user to type a message */}
       <form
         onSubmit={handleSendMessage}
         className="w-full h-14 flex justify-between p-2 border-t mt-3 border-zinc-700"

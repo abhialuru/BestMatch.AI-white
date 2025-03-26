@@ -132,7 +132,7 @@ function Try() {
   }, [analysisId]);
 
   return (
-    <section id="try" className="w-full min-h-screen p-10 bg-[#1F1F1F]">
+    <section id="try" className="w-full min-h-screen p-5 lg:p-10 bg-[#1F1F1F]">
       <div className="flex flex-col justify-center text-center items-center gap-5 mt-20">
         <Textanim>
           <h1 className="text-4xl tracking-tighter text-center">Try it</h1>
