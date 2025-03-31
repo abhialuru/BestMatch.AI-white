@@ -13,12 +13,11 @@ function TwoSec() {
   });
 
   return (
-    <div
-      ref={containerRef}
-      className="w-full min-h-[200vh] relative bg-[#1f1f1f]"
-    >
+    <div ref={containerRef} className="w-full min-h-[200vh] relative">
       <Hero />
-      <About scrollYProgress={scrollYProgress} />
+      <div className="w-full min-h-fit [background:radial-gradient(125%_125%_at_50%_90%,#000_50%,#FF6600_100%)]">
+        <About scrollYProgress={scrollYProgress} />
+      </div>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Link from "next/link";
 function Footer() {
   return (
     <footer className="w-full min-h-fit lg:h-screen bg-[#1f1f1f] lg:p-20 p-5 py-10 lg:px-32">
-      <div className="w-full h-full rounded-3xl bg-black/30 backdrop-blur-lg p-5 lg:p-10 flex flex-col justify-between">
+      <div className="w-full h-full rounded-3xl bg-black backdrop-blur-lg p-5 lg:p-10 flex flex-col justify-between">
         <div className="flex flex-col text-center md:text-start md:grid grid-cols-2">
           <div className="flex flex-col justify-between">
             <div className="flex flex-col gap-7">
