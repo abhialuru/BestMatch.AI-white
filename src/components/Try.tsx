@@ -134,10 +134,8 @@ function Try() {
   return (
     <section
       id="try"
-      className="w-full min-h-screen p-5 lg:p-10 bg-black relative"
+      className="w-full min-h-screen p-5 lg:p-10 bg-none relative"
     >
-      <div className="absolute top-20 left-20 rounded-full w-80 h-80 bg-[#FF4500]/40 filter blur-2xl"></div>
-      <div className="absolute  bottom-20 right-20 rounded-full w-80 h-80 bg-[#FF4500]/40 filter blur-2xl"></div>
       <div className="flex flex-col justify-center text-center items-center gap-5 mt-10">
         <Textanim>
           <h1 className="text-4xl tracking-tighter text-center">Try it</h1>
