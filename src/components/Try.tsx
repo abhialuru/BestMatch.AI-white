@@ -2,7 +2,7 @@
 import Textanim from "@/app/animations/Textanim";
 import Recommend from "@/small-comps/Recommend";
 import Routine from "@/small-comps/Routine";
-import { X } from "lucide-react";
+import { Droplet, X } from "lucide-react";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import Chatbot from "./Chatbot";
@@ -134,29 +134,28 @@ function Try() {
   return (
     <section
       id="try"
-      className="w-full min-h-screen p-5 lg:p-10 bg-none relative"
+      className="w-full min-h-screen p-5 lg:p-14 bg-gradient-to-l from-slate-100 via-slate-100 to-zinc-400 text-white relative"
     >
-      <div className="flex flex-col justify-center text-center items-center gap-5 mt-10">
-        <Textanim>
-          <h1 className="text-4xl tracking-tighter text-center">Try it</h1>
-        </Textanim>
-        <Textanim>
-          <p className="text-xl text-[#9CA3AF]">
-            Let our AI analyze your features and recommend the best products for
-            you.
-          </p>
-        </Textanim>
-        <form onSubmit={handleAnalyze} className="mt-14">
+      <div className="flex flex-col justify-center text-center items-center gap-5">
+        <h1 className="text-4xl tracking-tighter text-center text-black">
+          Try it
+        </h1>
+        <p className="text-xl text-black/50">
+          Let our AI analyze your features and recommend the best products for
+          you.
+        </p>
+        <form onSubmit={handleAnalyze} className="mt-10">
           <label>
             <select
-              className="max-w-fit py-4 border border-zinc-600 px-5 bg-black rounded-md focus:outline-none mb-5"
+              className=" w-40 py-4 border bg-black text-white rounded-md focus:outline-none mb-5"
               name="price-range"
               value={price}
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
                 setPrice(e.target.value)
               }
             >
-              <option>choose your price</option>
+              <option>choose your option </option>
+
               <option value="low">Low ($0 - $5)</option>
               <option value="medium">Medium ($5 - $20)</option>
               <option value="high">High ($20++)</option>
@@ -173,7 +172,7 @@ function Try() {
               onChange={handleImagePreview}
             />
             <button
-              className="bg-[#FF6600] hover:bg-[#FF4500] w-40 px-5 py-3 rounded-lg"
+              className="bg-black hover:scale-105 w-40 px-5 py-3 rounded-lg"
               onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                 e.preventDefault();
                 inputRef.current?.click();
@@ -201,7 +200,7 @@ function Try() {
             <button
               disabled={loading}
               type="submit"
-              className={`bg-[#FF6600] w-40 px-5 py-3 rounded-lg hover:bg-[#FF4500] ${
+              className={`bg-black  w-40 px-5 py-3 rounded-lg hover:scale-105 ${
                 loading && "pointer-events-none bg-gray-600"
               }`}
             >

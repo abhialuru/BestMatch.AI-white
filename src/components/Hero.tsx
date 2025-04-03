@@ -1,61 +1,22 @@
-"use client";
-import FadeButton from "@/app/animations/FadeButton";
-import Fadeout from "@/app/animations/Fadeout";
-import { motion } from "motion/react";
-import Image from "next/image";
-import { ReactNode, useMemo } from "react";
-
-const Words = ({ children }: { children: ReactNode }) => {
-  const letters = useMemo(() => {
-    const text = String(children);
-    return text?.split("");
-  }, [children]);
-
-  return (
-    <motion.h1
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      className="text-4xl md:text-5xl text-center font-extralight"
-    >
-      {letters.map((letter, i) => (
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            transition: {
-              duration: 0.3,
-              delay: i * 0.1,
-            },
-          }}
-          key={i}
-          className="hover:text-[#FF6600] cursor-pointer"
-        >
-          {letter}
-        </motion.span>
-      ))}
-    </motion.h1>
-  );
-};
+import { MoveRight } from "lucide-react";
 
 function Hero() {
   return (
-    <>
-      <main className="w-full h-screen flex justify-center items-center [background:radial-gradient(125%_125%_at_50%_10%,#000_50%,#FF6600_100%)]">
-        <div className="w-full lg:max-w-2xl h-80 tracking-tighter flex flex-col gap-5 mt-32 p-5 text-center lg:text-start">
-          <Words>REVOLUTIONIZE YOUR SHOPPING EXPERIENCE</Words>
-          <p>
-            <Fadeout className="text-[#9CA3AF] text-xl flex text-center">
-              AI-powered personalized product recommendations tailored to your
-              unique needs.
-            </Fadeout>
-          </p>
-          <div className="w-full flex justify-center items-center">
-            <FadeButton content="Get started" />
-          </div>
+    <main className="w-full h-[calc(100vh-3.5rem)] text-black flex justify-center items-center">
+      <div className="w-full max-w-2xl h-[70%] flex flex-col items-center gap-10 mt-20">
+        <h1 className="text-5xl font-semibold text-center">
+          Revolutionize your shopping experience
+        </h1>
+        <p className="max-w-md text-lg text-black/50 text-center">
+          AI-powered personalized product recommendations tailored to your
+          unique needs.
+        </p>
+        <div className="w-44 bg-black p-3 rounded-3xl flex justify-center items-center gap-5">
+          <button className="text-white">Get started</button>
+          <MoveRight className="text-white" />
         </div>
-      </main>
-    </>
+      </div>
+    </main>
   );
 }
 

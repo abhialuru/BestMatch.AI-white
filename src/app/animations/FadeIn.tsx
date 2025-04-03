@@ -2,17 +2,18 @@
 import { motion } from "motion/react";
 import { ReactNode } from "react";
 
-interface TextanimPropTypes {
+interface FadeInPropTypes {
   children: ReactNode;
+  x: number;
 }
 
-function Textanim({ children }: TextanimPropTypes) {
+function FadeIn({ children, x }: FadeInPropTypes) {
   return (
     <motion.span
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, x: x }}
       whileInView={{
         opacity: 1,
-        y: 0,
+        x: 0,
         transition: { duration: 0.3, delay: 0.3, ease: "easeIn" },
       }}
       viewport={{ once: true }}
@@ -22,4 +23,4 @@ function Textanim({ children }: TextanimPropTypes) {
   );
 }
 
-export default Textanim;
+export default FadeIn;

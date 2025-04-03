@@ -2,6 +2,7 @@
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion } from "framer-motion"; // Ensure you're using framer-motion
 import { useState } from "react";
+import Textanim from "./Textanim";
 
 interface FaqanimPropType {
   question: string;
@@ -34,7 +35,7 @@ function Faqanim({ question, ans }: FaqanimPropType) {
 
   return (
     <div>
-      <div className="w-full overflow-hidden p-5 border border-white rounded-lg">
+      <div className="w-full overflow-hidden p-5 border border-black rounded-lg">
         <div
           onClick={() => setIsActive(!isActive)}
           className="flex justify-between"
@@ -48,7 +49,7 @@ function Faqanim({ question, ans }: FaqanimPropType) {
           initial="closed"
           className="overflow-hidden"
         >
-          <p className="text-[#9CA3AF] md:text-base mt-2">{ans}</p>
+          <p className="text-black/50 md:text-base mt-2">{ans}</p>
         </motion.div>
       </div>
     </div>

@@ -59,7 +59,7 @@ function Recommend({ recommendations }: recommendProps) {
   return (
     <div className="mt-5 w-full">
       <div>
-        <h1 className="text-3xl font-bold text-orange-500 my-10">
+        <h1 className="text-3xl font-bold text-black my-10">
           Recommended Products
         </h1>
         <div className="flex flex-col gap-5">

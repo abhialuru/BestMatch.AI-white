@@ -109,8 +109,8 @@ function Chatbot({
   }
 
   return (
-    <div className="w-[95%] lg:w-[70vw] h-[70vh] bg-black mt-10 lg:mt-20 rounded-md flex flex-col">
-      <div className="w-full text-white/75 border-b p-2 border-zinc-700 flex justify-between">
+    <div className="w-[95%] lg:w-[70vw] h-[70vh] bg-blue-300 mt-10 lg:mt-20 rounded-md flex flex-col">
+      <div className="w-full text-black/75 border-b p-2 border-zinc-700 flex justify-between">
         <div>
           <p className="text-sm text-start">chat with</p>
           <p className="text-start flex gap-2 items-center">
@@ -120,7 +120,7 @@ function Chatbot({
             AI Assistant
           </p>
         </div>
-        <h3 className="text-lg h-full flex items-center font-bold text-[#FF4500]">
+        <h3 className="text-lg h-full flex items-center font-bold text-black">
           BestMatch.AI
         </h3>
       </div>
@@ -132,7 +132,7 @@ function Chatbot({
               key={i}
               className={`h-fit m-1 p-1 ${
                 msg.sender === "AI"
-                  ? "float-left text-left bg-zinc-900 w-[75%] rounded-md"
+                  ? "float-left text-left bg-blue-200 w-[75%] rounded-md"
                   : "float-right text-right w-[75%]"
               }`}
             >
@@ -149,11 +149,11 @@ function Chatbot({
       >
         <input
           type="text"
-          className="w-full bg-[#1f1f1f] rounded-l-md outline-none focus:outline-none p-1 text-sm text-white/75"
+          className="w-full bg-blue-200 rounded-l-md outline-none focus:outline-none p-1 text-sm text-black/75"
           value={userMessage}
           onChange={(e) => setUserMessage(e.target.value)}
         />
-        <button type="submit" className="p-2 bg-[#1f1f1f] rounded-r-md">
+        <button type="submit" className="p-2 bg-blue-200 rounded-r-md">
           send
         </button>
       </form>

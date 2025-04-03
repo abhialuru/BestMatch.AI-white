@@ -18,7 +18,7 @@ function FormContact() {
           <Boxanim initialY={-100} className="w-full md:w-1/2 pb-2">
             Name
             <input
-              className="w-full border border-[#3B82F6] focus:outline-none focus:border-[#FF6600] px-2 py-1 mt-2 bg-[#1F1F1F] rounded-md"
+              className="w-full border border-zinc-900 text-black px-2 py-1 mt-2 rounded-md placeholder:text-black/70"
               type="name"
               name="name"
               placeholder="Enter Your Name"
@@ -28,7 +28,7 @@ function FormContact() {
           <Boxanim initialY={-100} className="w-full md:w-1/2">
             Email
             <input
-              className="w-full border border-[#3B82F6] focus:outline-none focus:border-[#FF6600] px-2 py-1 mt-2 bg-[#1F1F1F] rounded-md"
+              className="w-full px-2 py-1 mt-2 border border-zinc-900 rounded-md"
               type="email"
               name="email"
               placeholder="Enter Your Email"
@@ -40,7 +40,7 @@ function FormContact() {
         <Boxanim initialY={100} className="h-26 py-1">
           Message
           <textarea
-            className="w-full h-48 border border-[#3BB2F6] focus:outline-none focus:border-[#FF6600]  px-2 py-1 bg-[#1F1F1F] mt-2 rounded-md resize-none"
+            className="w-full h-48 border border-zinc-900 px-2 py-1 mt-2 rounded-md resize-none"
             name="Message"
             placeholder="Message..."
             required
@@ -49,7 +49,7 @@ function FormContact() {
 
         <div className="flex justify-center p-4">
           <button
-            className="bg-[#FF6600] hover:bg-[#FF4500] py-2 px-4 text-white text-center rounded-md"
+            className="bg-zinc-900 text-white hover:bg- py-2 px-4 text-center rounded-md"
             type="submit"
           >
             send message
