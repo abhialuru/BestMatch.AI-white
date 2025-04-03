@@ -9,7 +9,7 @@ interface CardCompTypes {
 function CardComp({ head, para, Icon }: CardCompTypes) {
   return (
     <div className="flex flex-col w-full lg:w-[30%] h-60 text-black justify-center items-center bg-gradient-to-tl from-white via-gray-300 to-white transition-transform duration-300 p-3 rounded-lg relative">
-      <div className="size-24 rounded-full border mx-auto flex justify-center items-center shadow-sm shadow-white">
+      <div className="size-24 rounded-full border border-black mx-auto flex justify-center items-center shadow-sm shadow-white">
         <Icon className="size-16" />
       </div>
       <h1 className="text-xl font-semibold text-center">{head}</h1>
