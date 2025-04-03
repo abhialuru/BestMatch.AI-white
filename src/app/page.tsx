@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Navbar from "@/components/Navbar";
 import Try from "@/components/Try";
+import Revealanim from "./animations/Revealanim.tsx";
 
 function page() {
   return (
@@ -14,7 +15,7 @@ function page() {
         <Hero />
       </div>
       <About />
-      <Try />
+      <Revealanim />
       <Contact />
       <div className="w-full h-auto">
         <Faq />

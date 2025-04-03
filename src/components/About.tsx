@@ -8,7 +8,7 @@ interface CardCompTypes {
 
 function CardComp({ head, para, Icon }: CardCompTypes) {
   return (
-    <div className="flex flex-col w-full lg:w-[30%] h-60 text-black justify-center items-center bg-gradient-to-tl from-white via-gray-300 to-white transition-transform duration-300 p-3 rounded-lg">
+    <div className="flex flex-col w-full lg:w-[30%] h-60 text-black justify-center items-center bg-gradient-to-tl from-white via-gray-300 to-white transition-transform duration-300 p-3 rounded-lg relative">
       <div className="size-24 rounded-full border mx-auto flex justify-center items-center shadow-sm shadow-white">
         <Icon className="size-16" />
       </div>
@@ -22,7 +22,7 @@ function About() {
   return (
     <section
       id="about"
-      className="w-full h-auto relative overflow-hidden flex flex-col items-center justify-center bg-black p-14"
+      className="w-full h-auto relative overflow-hidden flex flex-col items-center justify-center bg-zinc-950 p-14"
     >
       <div
         id="box-card"
